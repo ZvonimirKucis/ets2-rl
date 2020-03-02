@@ -1,7 +1,20 @@
 import os
 
+# training parameters
+EPISODES = 500
+STEPS = 1000
+BATCH_SIZE = 2
+EPSILON = 0
+DECAY_FACTOR = 0.999
+GAMA = 0.95
+
 # telemetry server url
 TELEMETRY_URL = "http://10.5.1.82:25555/api/ets2/telemetry"
+
+# number of given action in state
+NUMBER_OF_ACTIONS = 4
+# number of additional inputs
+ADDITIONAL_INPUTS = 8
 
 # joystick mac and min value
 MAX_AXIS = 32768
@@ -20,6 +33,9 @@ CAPTION_Y2 = 620
 
 MAIN_DIR = os.path.dirname(__file__) + "/../"
 
+# Directory of models
+MODELS_DIR = os.path.join(MAIN_DIR, "models/")
+
 # Directory of an example image from an offence message.
 OFFENCE_FF_IMAGE = os.path.join(MAIN_DIR, "images/offence_ff.png")
 # Directory of an example image from a damage message (XX% damage).
@@ -31,11 +47,5 @@ REVERSE_IMAGE = os.path.join(MAIN_DIR, "images/reverse.png")
 MIN_REWARD = -100
 MAX_REWARD = 100
 
-# keys for pause and quickload to use
-KEY_PAUSE = "F1"
-KEY_QUICKLOAD = "F11"
-
-# Number of savegames to use during training. If set to N, the AI will
-# load a random one of the first N savegames during reinforcement learning.
-# (This happens many times during the training.)
-RELOAD_MAX_SAVEGAME_NUMBER = 6
+# Number of savegames to use during training. 
+RELOAD_MAX_SAVEGAME_NUMBER = 4
