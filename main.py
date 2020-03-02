@@ -19,7 +19,7 @@ def train():
 
     image = window.get_image()
     np_image = np.array(image)
-    model = QModel(np_image.shape, config.NUMBER_OF_ACTIONS, config.MODELS_DIR + "staro.json", config.MODELS_DIR + "staro.h5")
+    model = QModel(np_image.shape, config.NUMBER_OF_ACTIONS, config.MODELS_DIR + "model.json", config.MODELS_DIR + "model.h5")
     model.model.summary()
 
     q_learning(window, model.model, vjoy_input)
